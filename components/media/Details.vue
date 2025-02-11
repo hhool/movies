@@ -22,6 +22,6 @@ const tab = ref<'overview' | 'videos' | 'photos'>('overview')
     </button>
   </div>
   <MediaOverview v-if="tab === 'overview'" :item="item" :type="type" />
-  <MediaVideos v-if="tab === 'videos'" :item="item" />
+  <MediaVideos v-if="tab === 'videos'" :item="item" :tid="String(item.id)" />
   <MediaPhotos v-if="tab === 'photos'" :item="item" />
 </template>

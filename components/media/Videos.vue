@@ -3,6 +3,7 @@ import type { Media } from '~/types'
 
 defineProps<{
   item: Media
+  tid: string
 }>()
 </script>
 
@@ -12,7 +13,8 @@ defineProps<{
       {{ $t('{numberOfVideos} Videos', { numberOfVideos: item.videos?.results?.length || 0 }) }}
     </div>
     <div grid="~ cols-minmax-20rem" gap4>
-      <VideoCard v-for="i of item.videos?.results" :key="i.id" :item="i" />
+      <!-- how to get id -->
+      <VideoCard v-for="i of item.videos?.results" :key="i.id" :item="i" :tid="Number(tid)" />
     </div>
   </div>
 </template>
